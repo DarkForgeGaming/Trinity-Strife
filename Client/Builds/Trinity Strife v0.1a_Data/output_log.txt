@@ -1,0 +1,39 @@
+Initialize engine version: 4.6.1f1 (d1db7a1b5196)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 750M (ID=0xfe4)
+    Vendor:   NVIDIA
+    VRAM:     1951 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\andre_000\Documents\Trinity-Strife\Trinity-Strife\Client\Builds\Trinity Strife v0.1a_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\andre_000\Documents\Trinity-Strife\Trinity-Strife\Client\Builds\Trinity Strife v0.1a_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\andre_000\Documents\Trinity-Strife\Trinity-Strife\Client\Builds\Trinity Strife v0.1a_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\andre_000\Documents\Trinity-Strife\Trinity-Strife\Client\Builds\Trinity Strife v0.1a_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\andre_000\Documents\Trinity-Strife\Trinity-Strife\Client\Builds\Trinity Strife v0.1a_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\andre_000\Documents\Trinity-Strife\Trinity-Strife\Client\Builds\Trinity Strife v0.1a_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\andre_000\Documents\Trinity-Strife\Trinity-Strife\Client\Builds\Trinity Strife v0.1a_Data\Managed\Pathfinding.Ionic.Zip.Reduced.dll (this message is harmless)
+Loading C:\Users\andre_000\Documents\Trinity-Strife\Trinity-Strife\Client\Builds\Trinity Strife v0.1a_Data\Managed\Pathfinding.Ionic.Zip.Reduced.dll into Unity Child Domain
+Platform assembly: C:\Users\andre_000\Documents\Trinity-Strife\Trinity-Strife\Client\Builds\Trinity Strife v0.1a_Data\Managed\Pathfinding.JsonFx.dll (this message is harmless)
+Loading C:\Users\andre_000\Documents\Trinity-Strife\Trinity-Strife\Client\Builds\Trinity Strife v0.1a_Data\Managed\Pathfinding.JsonFx.dll into Unity Child Domain
+- Completed reload, in  0.043 seconds
+desktop: 1920x1080 60Hz; virtual: 5760x1080 at -1920,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\andre_000\Documents\Trinity-Strife\Trinity-Strife\Client\Builds\Trinity Strife v0.1a_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\andre_000\Documents\Trinity-Strife\Trinity-Strife\Client\Builds\Trinity Strife v0.1a_Data\Managed\System.dll (this message is harmless)
+GetString can only be called from the main thread.
+Constructors and field initializers will be executed from the loading thread when loading a scene.
+Don't use this function in the constructor or field initializers, instead move initialization code to the Awake or Start function.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/PlayerPrefsBindings.cpp Line: 48)
+
+ArgumentException: GetString can only be called from the main thread.
+Constructors and field initializers will be executed from the loading thread when loading a scene.
+Don't use this function in the constructor or field initializers, instead move initialization code to the Awake or Start function.
+  at (wrapper managed-to-native) UnityEngine.PlayerPrefs:GetString (string,string)
+  at UnityEngine.PlayerPrefs.GetString (System.String key) [0x00006] in C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\PlayerPrefsBindings.cs:73 
+  at CanvasStyle..ctor () [0x00000] in <filename unknown>:0 
+ 
+(Filename: C Line: 0)
+
