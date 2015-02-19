@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{002996bc-5f49-4034-9846-d804baed220a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character">
+      <UniqueIdentifier>{15d7ffc8-4d18-47d7-9d67-d1606b50ed02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ClientSession">
+      <UniqueIdentifier>{99d56e78-5ae9-41bf-a52b-797270e093c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Packet">
+      <UniqueIdentifier>{3cfbe6f1-5834-4652-a3f4-358ccb895128}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CircularBuffer.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ProducerConsumerQueue.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketType.h">
+      <Filter>Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientManager.h">
+      <Filter>ClientSession</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientSession.h">
+      <Filter>ClientSession</Filter>
+    </ClInclude>
+    <ClInclude Include="EasyServer.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterManager.h">
+      <Filter>Character</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CircularBuffer.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Exception.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Character</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterManager.cpp">
+      <Filter>Character</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientManager.cpp">
+      <Filter>ClientSession</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientSession.cpp">
+      <Filter>ClientSession</Filter>
+    </ClCompile>
+    <ClCompile Include="EasyServer.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="PacketHandling.cpp">
+      <Filter>Packet</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
