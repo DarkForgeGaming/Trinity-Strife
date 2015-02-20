@@ -128,12 +128,19 @@ REGISTER_HANDLER(PKT_CS_LOGIN)
 		printf("[DEBUG] packet parsing error", inPacket.mType);
 		return;
 	}
+
+
+
+
 	auto character = GCharacterManager->CreateCharacter(session->GetClientID());
 
 	int length = strnlen_s(inPacket.mCharacterName, MAX_NAME_LEN);
 	character->SetName(std::string(inPacket.mCharacterName, length));
 
-	printf("%s\n", inPacket.mCharacterName);
+
+	// LOG
+	printf("LoginRequest : %s\n", std::string(inPacket.mCharacterName, length).c_str());
+
 	{
 		LoginResult outPacket;
 		memcpy(outPacket.mName, inPacket.mCharacterName, length);
@@ -141,7 +148,6 @@ REGISTER_HANDLER(PKT_CS_LOGIN)
 		outPacket.mPosX = character->GetX();
 		outPacket.mPosY = character->GetY();
 
-		printf("%s\n", outPacket.mName);
 		session->Broadcast(&outPacket);
 	}
 }
@@ -160,6 +166,10 @@ REGISTER_HANDLER(PKT_CS_MOVE)
 	character->SetDestinationX(inPacket.mPosX);
 	character->SetDestinationY(inPacket.mPosY);
 
+
+	// LOG
+	printf("MoveRequest : %d , %d\n", inPacket.mPosX, inPacket.mPosY);
+
 	{
 		MoveBroadcastResult outPacket;
 		outPacket.mPlayerId = session->GetClientID();
@@ -167,7 +177,7 @@ REGISTER_HANDLER(PKT_CS_MOVE)
 		outPacket.mStartPosY = character->GetY();
 		outPacket.mEndPosX = inPacket.mPosX;
 		outPacket.mEndPosY = inPacket.mPosY;
-		
+
 		session->Broadcast(&outPacket);
 	}
 }
