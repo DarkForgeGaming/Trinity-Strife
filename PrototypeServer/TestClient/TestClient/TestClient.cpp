@@ -12,7 +12,7 @@
 #include <string>
 
 
-#include "..\..\PacketType.h"
+#include "PacketType.h"
 #include "CircularBuffer.h"
 
 #pragma comment(lib,"ws2_32.lib")
