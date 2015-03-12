@@ -9,6 +9,8 @@ import com.DarkForgeGaming.TrinityStrife.Network.Initialization;
 import com.DarkForgeGaming.TrinityStrife.Network.PacketListener;
 import com.DarkForgeGaming.TrinityStrife.Player.ClientPlayer;
 import com.DarkForgeGaming.TrinityStrife.Player.RemotePlayer;
+import com.DarkForgeGaming.TrinityStrife.Reference.BooleanReference;
+import com.DarkForgeGaming.TrinityStrife.Reference.NetworkReference;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -20,6 +22,8 @@ public class Main extends ApplicationAdapter {
 	public OrthographicCamera camera;
 	public SpriteBatch sprites1;
 	public Level level = new Level(5000, 5000);
+	
+	int num = 0;
 	
 	//-----------------------PLAYERS-----------------------------
 	public static ClientPlayer player;
@@ -55,6 +59,19 @@ public class Main extends ApplicationAdapter {
 
 	@Override
 	public void render (){
-		PacketListener.listen();
+		if(num == 3){
+			if(BooleanReference.connectedToServer && NetworkReference.hasSentLoginRequest){
+				try{
+					PacketListener.listen();
+				}catch(IOException e){
+					LogHelper.error("An IO Exception occurred while running PacketListener.listen()");
+					e.printStackTrace();
+				}
+			}
+			num = 0;
+		}
+		else if(num != 3){
+			num++;
+		}
 	}//[][][][][][][][][][][][][End][][][][Render][][][][][][][][][][][][][][][][][][][]
 }

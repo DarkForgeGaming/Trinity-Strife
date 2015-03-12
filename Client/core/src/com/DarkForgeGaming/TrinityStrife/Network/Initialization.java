@@ -1,5 +1,6 @@
 package com.DarkForgeGaming.TrinityStrife.Network;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -56,7 +57,7 @@ public class Initialization {
 					NetworkReference.socket = new Socket(StringReference.serverIP.toString(), Integer.parseInt(StringReference.serverPort.toString()));
 					NetworkReference.reader = new BufferedReader(new InputStreamReader(NetworkReference.socket.getInputStream()));
 					NetworkReference.out = new DataOutputStream(new BufferedOutputStream(NetworkReference.socket.getOutputStream()));
-					NetworkReference.in = new DataInputStream(NetworkReference.socket.getInputStream());
+					NetworkReference.in = new DataInputStream(new BufferedInputStream(NetworkReference.socket.getInputStream()));
 					numberComplete++;
 					BooleanReference.connectedToServer = true;
 					LogHelper.debug("Connected to Server.");
@@ -80,6 +81,7 @@ public class Initialization {
 					byte[] loginRequest = PacketHandler.createLoginRequest(StringReference.playerName.toString());
 					NetworkReference.out.write(loginRequest);
 					NetworkReference.out.flush();
+					NetworkReference.hasSentLoginRequest = true;
 					numberComplete++;
 				}
 				else{

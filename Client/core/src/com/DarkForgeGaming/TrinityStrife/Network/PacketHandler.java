@@ -2,12 +2,32 @@ package com.DarkForgeGaming.TrinityStrife.Network;
 
 public class PacketHandler {
 	public static String parsePacket(byte[] packet){
-		String packetType = "none";
+		String packetType = null;
 		//LoginResponse
-		if(packet[0] == 0x00 && packet[1] == 0x46 && packet[2] == 0x00 && packet[3] == 0x01){
+		if(packet[0] == 0 && packet[1] == 46 && packet[2] == 0 && packet[3] == 2){
 			packetType = "LoginResponse";
 		}
-		return packetType;
+		else{
+			boolean isEmpty = true;
+			for(int i=0; i<packet.length; i++){
+				if(packet[i] != 0){
+					isEmpty = false;
+					break;
+				}
+				else if(packet[i] == 0){
+					isEmpty = true;
+				}
+			}
+			if(isEmpty){
+				packetType = "Empty";
+			}
+		}
+		if(packetType != null){
+			return packetType;
+		}
+		else{
+			return "None";
+		}
 	}
 	
 	public static byte[] createLoginRequest(String name){
@@ -16,17 +36,17 @@ public class PacketHandler {
 		byte[] bytesToSend = new byte[34];
 		byte[] bytesProcessed = new byte[34];
 		
-		bytesToSend[0] = 0x00;
-		bytesToSend[1] = 0x22;
-		bytesToSend[2] = 0x00;
-		bytesToSend[3] = 0x01;
+		bytesToSend[0] = 0;
+		bytesToSend[1] = 34;
+		bytesToSend[2] = 0;
+		bytesToSend[3] = 1;
 		
 		for(int i=0; i<bytes.length; i++){
 			bytesToSend[i+4] = bytes[i];
 		}
 		
 		for(int i=0; i<(30-bytes.length); i++){
-			bytesToSend[4+bytes.length+i] = 0x00;
+			bytesToSend[4+bytes.length+i] = 0;
 		}
 		
 		bytesProcessed[0] = bytesToSend[1];
